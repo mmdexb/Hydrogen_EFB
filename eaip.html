@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>XNATC EFB电子飞行包</title>
+    <link rel="icon" type="image/png" sizes="4000x4000" href="/assets/img/avatars/lloogg.png">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.min.css">
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-passport"></i></div>
+                    <div class="sidebar-brand-text mx-3"><span>XNATC</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item"><a class="nav-link" href="index.php"><i class="fas fa-route"></i><span>航路查询</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/eaip.html"><i class="fas fa-book-open"></i><span>航图查询</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="weather.php"><i class="fas fa-cloud-sun-rain"></i><span>气象查询</span></a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"><a class="nav-link" href="https://map.xnatc.ink"><i class="fas fa-map-marked-alt"></i><span>连飞地图</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://fly.xnatc.ink/time"><i class="far fa-hourglass"></i><span>数据中心</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html"><i class="fas fa-window-maximize"></i><span>关于</span></a></li>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                        <ul class="navbar-nav flex-nowrap ms-auto">
+                            <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
+                                <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
+                                    <form class="me-auto navbar-search w-100">
+                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"></a>
+                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
+                                        <h6 class="dropdown-header">alerts center</h6><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="me-3">
+                                                <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
+                                            </div>
+                                            <div><span class="small text-gray-500">December 12, 2019</span>
+                                                <p>A new monthly report is ready to download!</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="me-3">
+                                                <div class="bg-success icon-circle"><i class="fas fa-donate text-white"></i></div>
+                                            </div>
+                                            <div><span class="small text-gray-500">December 7, 2019</span>
+                                                <p>$290.29 has been deposited into your account!</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="me-3">
+                                                <div class="bg-warning icon-circle"><i class="fas fa-exclamation-triangle text-white"></i></div>
+                                            </div>
+                                            <div><span class="small text-gray-500">December 2, 2019</span>
+                                                <p>Spending Alert: We've noticed unusually high spending for your account.</p>
+                                            </div>
+                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"></a>
+                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
+                                        <h6 class="dropdown-header">alerts center</h6><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="/assets/img/avatars/avatar4.jpeg">
+                                                <div class="bg-success status-indicator"></div>
+                                            </div>
+                                            <div class="fw-bold">
+                                                <div class="text-truncate"><span>Hi there! I am wondering if you can help me with a problem I've been having.</span></div>
+                                                <p class="small text-gray-500 mb-0">Emily Fowler - 58m</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="/assets/img/avatars/avatar2.jpeg">
+                                                <div class="status-indicator"></div>
+                                            </div>
+                                            <div class="fw-bold">
+                                                <div class="text-truncate"><span>I have the photos that you ordered last month!</span></div>
+                                                <p class="small text-gray-500 mb-0">Jae Chun - 1d</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="/assets/img/avatars/avatar3.jpeg">
+                                                <div class="bg-warning status-indicator"></div>
+                                            </div>
+                                            <div class="fw-bold">
+                                                <div class="text-truncate"><span>Last month's report looks great, I am very happy with the progress so far, keep up the good work!</span></div>
+                                                <p class="small text-gray-500 mb-0">Morgan Alvarez - 2d</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="/assets/img/avatars/avatar5.jpeg">
+                                                <div class="bg-success status-indicator"></div>
+                                            </div>
+                                            <div class="fw-bold">
+                                                <div class="text-truncate"><span>Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</span></div>
+                                                <p class="small text-gray-500 mb-0">Chicken the Dog · 2w</p>
+                                            </div>
+                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                    </div>
+                                </div>
+                                <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
+                            </li>
+                            <div class="d-none d-sm-block topbar-divider"></div>
+                            <li class="nav-item dropdown no-arrow">
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">XNATC电子飞行包</span><img class="border rounded-circle img-profile" src="/assets/img/avatars/lloogg.png"></a>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity log</a>
+                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4">航图查询</h3>
+                    <div class="row mb-3">
+                        <div class="col-lg-8">
+                            <div class="row mb-3 d-none">
+                                <div class="col">
+                                    <div class="card text-white bg-primary shadow">
+                                        <div class="card-body">
+                                            <div class="row mb-2">
+                                                <div class="col">
+                                                    <p class="m-0">Peformance</p>
+                                                    <p class="m-0"><strong>65.2%</strong></p>
+                                                </div>
+                                                <div class="col-auto"><i class="fas fa-rocket fa-2x"></i></div>
+                                            </div>
+                                            <p class="text-white-50 small m-0"><i class="fas fa-arrow-up"></i>&nbsp;5% since last month</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card text-white bg-success shadow">
+                                        <div class="card-body">
+                                            <div class="row mb-2">
+                                                <div class="col">
+                                                    <p class="m-0">Peformance</p>
+                                                    <p class="m-0"><strong>65.2%</strong></p>
+                                                </div>
+                                                <div class="col-auto"><i class="fas fa-rocket fa-2x"></i></div>
+                                            </div>
+                                            <p class="text-white-50 small m-0"><i class="fas fa-arrow-up"></i>&nbsp;5% since last month</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">CAAC North China Regional Administration/华北局</h4>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZBAA.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZBAA</a>  北京首都国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZBAD.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZBAD</a>  北京大兴国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZBDS.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZBDS</a>   鄂尔多斯伊金霍洛国际机场 </span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZBHH.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZBHH</a>  呼和浩特白塔国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZBLA.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZBLA</a>   呼伦贝尔东山国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZBMZ.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZBMZ</a>  满洲里西郊机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZBSJ.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZBSJ </a>   石家庄正定机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZBTJ.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZBTJ</a>     天津滨海国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZBYN.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZBYN</a>   太原武宿国际机场</span></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">CAAC Northeast Regional Administration/东北局</h4>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZYCC.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZYCC</a>   长春龙嘉国际机场机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZYHB.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZYHB</a>   哈尔滨太平国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZYJM.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZYJM</a>   佳木斯东郊机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZYMD.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZYMD</a>  牡丹江海浪机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZYQQ.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZYQQ</a>   齐齐哈尔三家子机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZYTL.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZYTL</a>     大连周水子国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZYTX.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZYTX</a>     沈阳桃仙国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZYYJ.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZYYJ</a>      延吉朝阳川国际机场</span></li>
+                                       
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6" style="margin: 0px;margin-top: 20px;">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">CAAC East China Regional Administration/华东局</h4>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSAM.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSAM</a>   厦门高崎国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSCG.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSCG</a>    常州奔牛机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSCN.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSCN</a>    南昌昌北国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSFZ.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSFZ</a>     福州长乐国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSHC.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSHC</a>    杭州萧山国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSJN.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSJN</a>     济南遥墙国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSNB.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSNB</a>    宁波栎社国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSNJ.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSNJ</a>     南京禄口国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSNT.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSNT</a>    南通兴东国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSOF.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSOF</a>    合肥新桥国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSPD.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSPD</a>    上海浦东国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSQD.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSQD</a>    青岛胶东国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSQZ.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSQZ</a>    泉州晋江机场</span></li>
+                                        
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="margin: 0px;margin-top: 20px;">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">CAAC East China Regional Administration/华东局</h4>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSWH.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSWH</a>  威海大水泊机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSWX.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSWX</a>   无锡硕放国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSWZ.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSWZ</a>   温州龙湾机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSXZ.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSXZ</a>    徐州观音机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSYA.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSYA</a>    扬州泰州国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSYN.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSYN</a>   盐城南洋国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSYT.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSYT</a>    烟台莱山机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSYW.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSYW</a>  中国义乌机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSZS.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSZS</a>    普陀山机场 </span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSSH.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSSH</a>    淮安涟水机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSSS.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSSS</a>    上海虹桥国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZSTX.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZSTX</a>    黄山屯溪国际机场</span></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="margin-top: 20px;">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">CAAC Southwest Regional Administration/西南局</h4>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZPJH.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZPJH</a>    西双版纳嘎洒机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZPLJ.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZPLJ</a>    丽江三义国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZPLJ.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZPMS</a>  德宏芒市机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZPPP.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZPPP</a>   昆明长水国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZUCK.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZUCK</a>  重庆江北国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZUGY.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZUGY</a>  贵阳龙洞堡国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZULS.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZULS</a>   拉萨贡嘎国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZUTF.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZUTF</a>   成都天府国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZUUU.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZUUU</a>  成都双流国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZUXC.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZUXC</a>   西昌青山机场</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="margin-top: 20px;">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">CAAC Central and Southern Regional Administration/中南局</h4>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZGDY.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZGDY</a>   张家界荷花机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZGGG.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZGGG</a>   广州白云国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZGHA.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZGHA</a>   长沙黄花国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZGKL.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZGKL</a>    桂林两江国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZGNN.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZGNN</a>   南宁吴圩国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZGOW.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZGOW</a>   揭阳潮汕国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZGSZ.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZGSZ</a>     深圳宝安国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZJHK.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZJHK </a>    海口美兰国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZJQH.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZJQH </a>    琼海博鳌机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZJSY.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZJSY </a>     三亚凤凰国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZHCC.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZHCC</a>    郑州新郑国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZHHH.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZHHH</a>    武汉天河国际机场</span></li>
+                                        
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="margin-top: 20px;">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">CAAC Northwest Regional Administration/西北局</h4>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZLDH.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZLDH</a>  敦煌莫高国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZLIC.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZLIC </a>   银川河东国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZLLL.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZLLL</a>    兰州中川国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZLXN.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZLXN</a>  西宁曹家堡国际机场</span></li>
+                                        <li class="list-group-item"><span><a  href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZLJQ.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZLJQ</a>   嘉峪关机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZLXY.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZLXY</a>   西安咸阳国际机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZLYS.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZLYS</a>   玉树巴塘机场</span></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="margin-top: 20px;">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">CAAC Xinjiang Regional Administration/新疆局</h4>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><span><a data-type="URL" data-id="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZWKC.pdf" href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZWKC.pdf" target="_blank" >ZWKC</a>  库车龟兹机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZLIC.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZLIC </a>   银川河东国际机场</span></li>
+                                        <li class="list-group-item"><span><a data-type="URL" data-id="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZWTL.pdf" href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZWTL.pdf" target="_blank" >ZWTL</a>   吐鲁番交河机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZWTN.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZWTN</a>  新疆和田机场</span></li>
+                                        <li class="list-group-item"><span><a href="https://aip-1255319689.cos.ap-beijing.myqcloud.com/ZWWW.pdf?ci-process=doc-preview&amp;dstType=html&amp;copyable=0&amp;html" target="_blank" >ZWWW</a>  乌鲁木齐地窝堡国际机场</span></li>
+                                        
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © XNATC Develop Group 2022</span></div>
+                </div>
+            </footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/js/script.min.js"></script>
+</body>
+
+</html>
